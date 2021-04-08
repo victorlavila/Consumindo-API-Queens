@@ -1,11 +1,11 @@
 package br.com.consumindoapiqueens.View.UI
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +13,6 @@ import br.com.consumindoapiqueens.Model.QueensResponseItem
 import br.com.consumindoapiqueens.R
 import br.com.consumindoapiqueens.View.Adapter.QueensAdapter
 import br.com.consumindoapiqueens.ViewModel.ViewModelQueens
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private val results = mutableListOf<QueensResponseItem>()

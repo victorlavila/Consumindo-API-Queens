@@ -1,6 +1,7 @@
 package br.com.consumindoapiqueens.Repository
 
 import br.com.consumindoapiqueens.Model.QueensResponse
+import br.com.consumindoapiqueens.Model.QueensResponseItem
 import br.com.consumindoapiqueens.Network.EndpointQueens
 import br.com.consumindoapiqueens.Network.Url
 
@@ -11,5 +12,5 @@ class RepositoryApi {
 
     private val serviceQueen = Url(url).create(service)
 
-    suspend fun getQueensService() : List<QueensResponse> = serviceQueen.getResponseQueens()
+    suspend fun getQueensService() : List<QueensResponseItem> = serviceQueen.getResponseQueens()
 }

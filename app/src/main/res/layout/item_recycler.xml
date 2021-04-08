@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="150dp"
-    android:layout_height="170dp"
+    android:layout_width="180dp"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="10dp"
     android:layout_marginStart="20dp"
-    android:layout_marginTop="10dp"
-    android:backgroundTint="@color/cardview_dark_background">
+    android:layout_marginTop="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,15 +16,16 @@
         <ImageView
             android:id="@+id/image_queen"
             android:layout_width="match_parent"
-            android:layout_height="120dp"/>
+            android:layout_height="150dp"/>
 
         <TextView
             android:id="@+id/id_queen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Id: 01"
+            android:layout_marginStart="6dp"
             android:textSize="08sp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/name_queen"
@@ -33,11 +33,12 @@
             android:layout_height="wrap_content"
             tools:text="Name: Victoria 'Porkchop' Parker"
             android:textSize="08sp"
-            android:textColor="@color/white"/>
+            android:layout_marginStart="6dp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="6dp"/>
+            android:layout_height="10dp"/>
 
         <TextView
             android:id="@+id/information_queen"

@@ -1,11 +1,13 @@
 package br.com.consumindoapiqueens.ViewModel
 
+import android.net.LinkProperties
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.consumindoapiqueens.Model.QueensResponse
 import br.com.consumindoapiqueens.Model.QueensResponseItem
 import br.com.consumindoapiqueens.Repository.RepositoryApi
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
@@ -22,11 +24,11 @@ class ViewModelQueens : ViewModel() {
         getAllQueens()
     }
 
-    private fun getAllQueens() = CoroutineScope(IO).launch {
+    private fun getAllQueens() = CoroutineScope(Dispatchers.IO).launch {
         loading.postValue(true)
         try {
             repository.getQueensService().let {
-                listMutableQueens.postValue(QueensResponse())
+                listMutableQueens.postValue(it)
                 loading.postValue(false)
             }
         }catch (error : Throwable){

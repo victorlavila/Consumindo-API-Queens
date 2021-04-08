@@ -1,7 +1,7 @@
 package br.com.consumindoapiqueens.View.Adapter
 
 import android.content.Context
-import android.media.Image
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +10,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.consumindoapiqueens.Model.QueensResponseItem
 import br.com.consumindoapiqueens.R
+import br.com.consumindoapiqueens.View.UI.DatailsActivity
 import com.squareup.picasso.Picasso
 
 class QueensAdapter (
+
     private val queensList: List<QueensResponseItem>,
     val context: Context)
     : RecyclerView.Adapter<QueensAdapter.QueensViewHolder>() {
@@ -27,6 +29,12 @@ class QueensAdapter (
         Picasso.get().load(currentQueens.imageUrl).into(holder.imageQueen)
         holder.idQueen.text = currentQueens.id.toString()
         holder.nameQueen.text = currentQueens.name
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(it.context, DatailsActivity::class.java)
+            intent.putExtra("QUEEN", queensList[position])
+            it.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
